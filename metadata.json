@@ -1,0 +1,8 @@
+{
+  "name": "House of Curry - Official Brand Page",
+  "description": "An official, SEO-optimized brand and blog page for House of Curry restaurant, featuring brand philosophy, signature dishes, and interactive AI-driven menu recommendations.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
