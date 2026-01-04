@@ -8,15 +8,15 @@ import MenuFAQPage from './components/MenuFAQPage';
 
 const App: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'menu-faq'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'manu-faq'>('home');
 
   // Scroll to top when view changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentView]);
 
-  // Function to navigate and scroll to menu
-  const navigateToMenu = () => {
+  // Function to navigate and scroll to menu/selection section
+  const navigateToSelections = () => {
     setCurrentView('home');
     setTimeout(() => {
       const menuSection = document.getElementById('menu');
@@ -56,16 +56,10 @@ const App: React.FC = () => {
               About Us
             </button>
             <button 
-              onClick={navigateToMenu}
-              className="hover:text-orange-700 transition-colors"
+              onClick={() => setCurrentView('manu-faq')} 
+              className={`transition-colors ${currentView === 'manu-faq' ? 'text-orange-700' : 'hover:text-orange-700'}`}
             >
-              Menu
-            </button>
-            <button 
-              onClick={() => setCurrentView('menu-faq')} 
-              className={`transition-colors ${currentView === 'menu-faq' ? 'text-orange-700' : 'hover:text-orange-700'}`}
-            >
-              Menu FAQ
+              Manu Faq
             </button>
             <a href="#faq" onClick={(e) => {
               if (currentView !== 'home') {
@@ -83,10 +77,10 @@ const App: React.FC = () => {
       </nav>
 
       {currentView === 'about' && (
-        <AboutPage onNavigateToMenu={navigateToMenu} />
+        <AboutPage onNavigateToMenu={navigateToSelections} />
       )}
       
-      {currentView === 'menu-faq' && (
+      {currentView === 'manu-faq' && (
         <MenuFAQPage />
       )}
 
@@ -106,10 +100,10 @@ const App: React.FC = () => {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <button 
-                    onClick={navigateToMenu}
+                    onClick={navigateToSelections}
                     className="px-8 py-4 bg-orange-700 text-white rounded-lg font-bold shadow-xl shadow-orange-100 hover:bg-orange-800 transition-all"
                   >
-                    Explore Signature Dishes
+                    Our Selections
                   </button>
                   <button 
                     onClick={() => setCurrentView('about')}
@@ -146,7 +140,7 @@ const App: React.FC = () => {
                   House of Curry is more than a restaurant; it is a dedicated custodian of Indian culinary heritage. Born from a vision to provide a consistent and premium dining experience, our brand stands at the intersection of tradition and modern hospitality. We believe that Indian food is a symphony of flavors that requires precision, patience, and a deep respect for the ingredients. 
                 </p>
                 <p>
-                  Our establishments are designed to be sanctuaries where guests can explore the vast geographical diversity of India through a single, cohesive menu. From the smoky streets of Old Delhi to the aromatic kitchens of Hyderabad, House of Curry brings the best of the sub-continent to your table with unwavering consistency.
+                  Our establishments are designed to be sanctuaries where guests can explore the vast geographical diversity of India through a single, cohesive collection of offerings. From the smoky streets of Old Delhi to the aromatic kitchens of Hyderabad, House of Curry brings the best of the sub-continent to your table with unwavering consistency.
                 </p>
               </div>
             </section>
@@ -192,12 +186,12 @@ const App: React.FC = () => {
               </div>
             </section>
 
-            {/* 4. Menu Overview */}
+            {/* 4. Selection Overview */}
             <section id="menu">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl font-black text-[#4a3728] mb-6">A Journey Through Our Menu</h2>
+                <h2 className="text-4xl md:text-5xl font-black text-[#4a3728] mb-6">Our Culinary Selections</h2>
                 <p className="text-xl text-gray-600">
-                  Our menu is logically categorized to guide you through a complete Indian meal cycle, catering to diverse dietary preferences with a balanced focus on vegetarian and non-vegetarian selections.
+                  Our offerings are logically categorized to guide you through a complete Indian meal cycle, catering to diverse dietary preferences with a balanced focus on vegetarian and non-vegetarian selections.
                 </p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
@@ -209,7 +203,7 @@ const App: React.FC = () => {
               </div>
               <div className="text-center">
                 <button 
-                  onClick={() => setCurrentView('menu-faq')}
+                  onClick={() => setCurrentView('manu-faq')}
                   className="inline-flex items-center gap-2 text-orange-700 font-bold hover:underline"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -217,7 +211,7 @@ const App: React.FC = () => {
                     <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
                     <line x1="12" y1="17" x2="12.01" y2="17"/>
                   </svg>
-                  View Detailed Menu FAQs
+                  View Detailed Manu Faqs
                 </button>
               </div>
             </section>
@@ -417,8 +411,7 @@ const App: React.FC = () => {
             <h5 className="font-black mb-8 text-orange-700 uppercase tracking-widest text-xs">Navigation</h5>
             <ul className="space-y-6 text-base text-gray-400 font-semibold">
               <li><button onClick={() => setCurrentView('about')} className="hover:text-white transition-colors">Our Story</button></li>
-              <li><button onClick={navigateToMenu} className="hover:text-white transition-colors">Full Menu</button></li>
-              <li><button onClick={() => setCurrentView('menu-faq')} className="hover:text-white transition-colors">Menu FAQ</button></li>
+              <li><button onClick={() => setCurrentView('manu-faq')} className="hover:text-white transition-colors">Manu Faq</button></li>
               <li><a href="#" className="hover:text-white transition-colors">Location</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Gift Cards</a></li>
             </ul>

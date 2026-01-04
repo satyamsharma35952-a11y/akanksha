@@ -200,7 +200,7 @@ const AboutPage: React.FC<{ onNavigateToMenu: () => void }> = ({ onNavigateToMen
               onClick={onNavigateToMenu}
               className="bg-[#4a3728] text-white px-10 py-5 rounded-xl font-bold hover:bg-[#2a1f17] transition-all shadow-lg"
             >
-              View Full Menu
+              View Our Selections
             </button>
             <button className="bg-orange-700 text-white px-10 py-5 rounded-xl font-bold hover:bg-orange-800 transition-all shadow-lg shadow-orange-100">
               Make a Reservation

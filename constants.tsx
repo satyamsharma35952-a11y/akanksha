@@ -93,19 +93,19 @@ export const FAQS: FAQ[] = [
   }
 ];
 
-export const MENU_FAQS = {
-  intro: "This Menu FAQ provides detailed insights into our culinary offerings, dietary accommodations, and preparation standards to ensure an informed dining experience at House of Curry.",
+export const MANU_FAQS = {
+  intro: "This Manu Faq provides detailed insights into our culinary offerings, dietary accommodations, and preparation standards to ensure an informed dining experience at House of Curry.",
   sections: [
     {
-      title: "Menu & Food-Related FAQs",
+      title: "Selection & Food-Related Inquiries",
       items: [
         {
           question: "What are the signature dishes at House of Curry?",
           answer: "Our most acclaimed dishes include the Old Delhi Butter Chicken, Awadhi Lamb Rogan Josh, and Kolkata Dum Biryani. These are prepared using proprietary family recipes and traditional techniques."
         },
         {
-          question: "How do you categorize your menu items?",
-          answer: "Our menu is structured into Starters (Tandoor & Fritters), Main Courses (Gravies & Semi-dry), Breads (Naan & Paratha), Rice (Biryani & Pulao), and Desserts (Traditional Sweets)."
+          question: "How do you categorize your culinary selections?",
+          answer: "Our offerings are structured into Starters (Tandoor & Fritters), Main Courses (Gravies & Semi-dry), Breads (Naan & Paratha), Rice (Biryani & Pulao), and Desserts (Traditional Sweets)."
         },
         {
           question: "Are the portions suitable for sharing?",
@@ -146,10 +146,10 @@ export const MENU_FAQS = {
       items: [
         {
           question: "Do you have a separate vegetarian section?",
-          answer: "Yes, a significant portion of our menu is dedicated to vegetarian cuisine, including various Paneer, Lentil (Dal), and vegetable-based dishes."
+          answer: "Yes, a significant portion of our selection is dedicated to vegetarian cuisine, including various Paneer, Lentil (Dal), and vegetable-based dishes."
         },
         {
-          question: "Which menu items are explicitly vegan?",
+          question: "Which selection items are explicitly vegan?",
           answer: "Dishes such as our Chana Masala, Baingan Bharta, and Dal Tadka (prepared with oil instead of ghee upon request) are vegan-friendly."
         },
         {
@@ -180,19 +180,19 @@ export const MENU_FAQS = {
       ]
     },
     {
-      title: "Ordering & Menu Usage FAQs",
+      title: "Ordering & Service FAQs",
       items: [
         {
-          question: "Is the menu different for dine-in and takeaway?",
-          answer: "The core menu remains the same, though certain delicate tandoori items are recommended primarily for dine-in to maintain texture."
+          question: "Is the selection different for dine-in and takeaway?",
+          answer: "The core offerings remain the same, though certain delicate tandoori items are recommended primarily for dine-in to maintain texture."
         },
         {
-          question: "Do you offer seasonal menu updates?",
+          question: "Do you offer seasonal updates?",
           answer: "We introduce seasonal specials four times a year to highlight regional ingredients available during specific months."
         },
         {
-          question: "How often is the standard menu updated?",
-          answer: "Our standard menu is reviewed annually to incorporate guest feedback while retaining our most popular signature staples."
+          question: "How often is the standard selection updated?",
+          answer: "Our standard selections are reviewed annually to incorporate guest feedback while retaining our most popular signature staples."
         }
       ]
     }

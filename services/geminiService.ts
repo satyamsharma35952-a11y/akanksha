@@ -1,10 +1,11 @@
 
-import { GoogleGenAI, Type } from "@google/genai";
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+import { GoogleGenAI } from "@google/genai";
 
 export const getMenuRecommendation = async (userPrompt: string) => {
   try {
+    // Create instance inside the function as per best practices
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `You are the House of Curry AI Concierge. Based on the user prompt: "${userPrompt}", recommend 2-3 dishes from our standard menu structure (Starters, Mains, Breads, Rice, Desserts). Use an official, professional, and welcoming tone. Focus on flavors and ingredients. Keep the response under 150 words.`,
